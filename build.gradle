@@ -47,13 +47,6 @@ dependencies {
     compile "net.ilexiconn:llibrary:1.7.4-1.10.2:dev"
 }
 
-jar {
-    manifest {
-        attributes "FMLCorePlugin": "com.github.alexthe666.iceandfire.access.IceAndFireForgeLoading"
-        attributes "FMLCorePluginContainsFMLMod": "true"
-    }
-}
-
 processResources
 {
     // this will ensure that this task is redone when the versions change.
@@ -71,5 +64,12 @@ processResources
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+jar {
+    manifest {
+        attributes "FMLCorePlugin": "com.github.alexthe666.iceandfire.access.IceAndFireForgeLoading"
+        attributes "FMLCorePluginContainsFMLMod": "true"
     }
 }
